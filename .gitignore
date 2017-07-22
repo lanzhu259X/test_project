@@ -9,3 +9,5 @@
 
 # .gitignore for maven
 target/
+
+logs/
