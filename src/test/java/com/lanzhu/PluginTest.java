@@ -24,10 +24,10 @@ public class PluginTest {
             Integer age = 1;
             String brithDayStr = "brithDayStr";
             JSON result = modelTest.getPublicAgeAndName(name, age, brithDayStr);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (java.text.ParseException e) {
             System.out.println(e.getMessage());
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -40,10 +40,10 @@ public class PluginTest {
             Integer age = 1;
             String brithDayStr = "brithDayStr";
             JSON result = ModelTest.getStaticAgeAndName(name, age, brithDayStr);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (java.text.ParseException e) {
             System.out.println(e.getMessage());
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -54,7 +54,7 @@ public class PluginTest {
         try {
             int age = 1;
             boolean result = modelTest.AageIsLetterThan_18(age);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -64,7 +64,7 @@ public class PluginTest {
     public void testGetName() {
         try {
             String result = modelTest.getName();
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -75,7 +75,7 @@ public class PluginTest {
         try {
             String name = "name";
             modelTest.setName(name);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -85,7 +85,7 @@ public class PluginTest {
     public void testGetAge() {
         try {
             int result = modelTest.getAge();
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -96,7 +96,7 @@ public class PluginTest {
         try {
             int age = 1;
             modelTest.setAge(age);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -106,7 +106,7 @@ public class PluginTest {
     public void testGetBrithDay() {
         try {
             Date result = modelTest.getBrithDay();
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -117,7 +117,7 @@ public class PluginTest {
         try {
             Date brithDay = new Date();
             modelTest.setBrithDay(brithDay);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -129,7 +129,7 @@ public class PluginTest {
             String str = "str";
             String separator = "separator";
             String[] result = modelTest.getStringArr(str, separator);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -140,7 +140,7 @@ public class PluginTest {
         try {
             List<ModelTest> modelTests = null;
             modelTest.requestParamList(modelTests);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -152,7 +152,7 @@ public class PluginTest {
             String[] arr = null;
             Map<String, ModelTest> map = null;
             Map<String, ModelTest> result = modelTest.requestParamArr(arr, map);
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -162,7 +162,7 @@ public class PluginTest {
     public void testGetModelTestArr() {
         try {
             List<ModelTest> result = modelTest.getModelTestArr();
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -172,7 +172,7 @@ public class PluginTest {
     public void testGetObjectMap() {
         try {
             Map<String, Object> result = modelTest.getObjectMap();
-            Assert.isTrue(true);
+            Assert.isTrue(true, "true");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
