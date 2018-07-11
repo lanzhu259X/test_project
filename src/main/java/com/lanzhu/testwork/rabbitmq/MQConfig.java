@@ -30,8 +30,11 @@ public class MQConfig {
 
     // topic exchange name
     public static final String TOPIC_TYPE = "topic"; // 消息分配模式
-    public static final String EXCHANGE = "TEST-EXCHANGE"; //正常消息使用的交换器
-    public static final String DEAL_EXCHANGE = "DEAL-EXCHANGE"; //死信消息使用是的交换交换器
+    public static final String DIRECT_TYPE = "direct"; //直连模式
+    public static final String EXCHANGE = "TEST-EXCHANGE"; //正常消息使用的Exchange
+    public static final String DEAL_EXCHANGE = "DEAL-EXCHANGE"; //死信消息使用是的Exchange
+    public static final String DEAL_EXCHANGE_B = "DEAL-EXCHANGE-B"; //死信消息使用是的Exchange，用于模拟队列到期时间的情况
+
 
 
     //建立全局唯一的链接器，和为每一个service bean 实例创建一个channel.
@@ -88,7 +91,7 @@ public class MQConfig {
                  * 参数4：交换器在不被使用时是否删除
                  * 参数5：交换器的其他属性
                  */
-                result.exchangeDeclare(MQConfig.EXCHANGE, MQConfig.TOPIC_TYPE, true, false, null);
+                result.exchangeDeclare(MQConfig.EXCHANGE, MQConfig.TOPIC_TYPE);
                 channelMap.put(beanName, result);
             }
             return result;

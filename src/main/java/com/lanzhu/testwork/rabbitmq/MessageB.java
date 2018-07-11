@@ -3,14 +3,13 @@ package com.lanzhu.testwork.rabbitmq;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 
-public class MessageA extends Message implements Serializable {
-
+public class MessageB extends Message implements Serializable {
 
     @Override
     public String toString() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         StringBuilder sb = new StringBuilder();
-        sb.append("MessageA: {");
+        sb.append("MessageB: {");
         sb.append("id=" + getId());
         sb.append(", info=" + getInfo());
         sb.append(", ttl=" + getTtl());
