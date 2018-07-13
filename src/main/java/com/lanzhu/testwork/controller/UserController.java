@@ -21,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/phone/{phone}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getByPhone(@PathVariable String phone) {
+    public ResponseEntity<String> getByPhone(@PathVariable String phone) throws Exception {
         User user = userService.getUserByPhone(phone);
         return ResponseEntity.ok().body(JSON.toJSONString(user));
     }

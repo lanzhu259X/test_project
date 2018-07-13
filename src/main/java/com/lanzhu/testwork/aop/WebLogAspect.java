@@ -25,7 +25,7 @@ public class WebLogAspect {
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
-    ThreadLocal<ThreadLog> threadLog = new ThreadLocal<ThreadLog>();
+    public static ThreadLocal<ThreadLog> threadLog = new ThreadLocal<ThreadLog>();
 
     @Pointcut("execution(public * com.lanzhu.testwork.controller..*.*(..))")
     public void webLog(){}
@@ -91,7 +91,7 @@ public class WebLogAspect {
     }
 
     @Getter
-    class ThreadLog {
+    public class ThreadLog {
         private String logId;
         private long startTime;
 

@@ -3,6 +3,9 @@ package com.lanzhu.testwork.service;
 import com.lanzhu.testwork.constants.IdentifierType;
 import com.lanzhu.testwork.dao.UserAuthMapper;
 import com.lanzhu.testwork.dao.UserMapper;
+import com.lanzhu.testwork.exception.BizException;
+import com.lanzhu.testwork.exception.BizRuntimeException;
+import com.lanzhu.testwork.exception.ErrorCode;
 import com.lanzhu.testwork.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -18,14 +21,14 @@ public class UserService {
     @Autowired
     private UserAuthMapper userAuthMapper;
 
-    public User getUserByPhone(String phone) {
-        if (StringUtils.isEmpty(phone)) {
+    public User getUserByPhone(String phone) throws BizException {
+        if (StringUtils.isEmpty(phone) || "1".equalsIgnoreCase(phone)) {
             log.warn("get user by phone but param phone is empty.");
-            throw new IllegalArgumentException("Request Param phone is empty.");
+            throw new BizRuntimeException(ErrorCode.USER_PHONE_EMPTY);
         }
         if (phone.length() != 11) {
             log.warn("request param phone format is error: {}", phone);
-            throw new IllegalArgumentException("Request param phone format is error.");
+            throw new BizException(ErrorCode.USER_PHONE_ERROR);
         }
         return userMapper.selectByPhone(phone);
     }
@@ -37,7 +40,7 @@ public class UserService {
      * @param credential
      * @return
      */
-    public boolean validateCredential(String identifier, IdentifierType type, String credential) {
+    public boolean validateCredential(String identifier, IdentifierType type, String credential) throws BizException {
         return true;
     }
 
