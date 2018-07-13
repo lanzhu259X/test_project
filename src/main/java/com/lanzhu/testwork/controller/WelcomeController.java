@@ -18,9 +18,4 @@ public class WelcomeController {
         return "index";
     }
 
-    @RequestMapping(value = "/{path}", method = RequestMethod.GET)
-    public String path(@PathVariable("path") String path) {
-        return path;
-    }
-
 }
